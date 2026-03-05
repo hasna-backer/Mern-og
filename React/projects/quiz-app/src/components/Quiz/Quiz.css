@@ -1,0 +1,48 @@
+.container{
+	width:70%;
+	margin:auto;
+	background: white;
+	margin-top: 100px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.container hr{
+	height: 2px;
+	border:none;
+	background: #7d8581;
+
+}
+
+.container h2{
+	font-size: 2em;
+	line-height: 1.1;
+	font-weight: 500;
+}
+
+.container ul li{
+	list-style: none;
+	padding: 10px;
+	border: 2px solid #555a58;
+	border-radius: 5px;
+	margin-bottom: 4px;
+	padding-left: 10px;
+	color:#2f3130
+}
+
+.container button{
+		padding: 10px;
+		border: none;
+		border-radius: 5px;
+		background: #2f3130;
+		color: white;
+		font-size: 1em;
+		line-height: 1.1;
+		font-weight: 500;
+}
+
+.index{
+	margin: auto;
+}

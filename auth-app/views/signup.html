@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	<h2>Signup</h2>
+
+	<form id="signupForm">
+		<input type="text" placeholder="Name" id="name" required><br><br>
+		<input type="email" placeholder="Email" id="email" required><br><br>
+		<input type="password" placeholder="Password" id="password" required><br><br>
+		<button type="submit">Signup</button>
+	</form>
+
+	<script>
+		document.getElementById("signupForm").addEventListener("submit", async (e) => {
+			e.preventDefault();
+
+			await fetch("http://localhost:5000/api/signup", {
+				method: "POST",
+				headers: {"Content-Type": "application/json"},
+				body: JSON.stringify({
+					name: name.value,
+					email: email.value,
+					password: password.value
+				})
+			});
+
+			alert("User Registered");
+		});
+	</script>
+</body>
+
+</html>
