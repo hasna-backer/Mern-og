@@ -1,0 +1,23 @@
+<ul>
+	<% products.forEach((product)=>{ %>
+		<li>
+			<%= product %>
+		</li>
+		<% }) %>
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+<% if(products.length> 0) { %>
+	<p>Products available</p>
+	<% } else { %>
+		<p>No products</p>
+		<% } %>

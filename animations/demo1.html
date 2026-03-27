@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Profile Card Animation</title>
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+			font-family: Arial, sans-serif;
+		}
+
+		/* Card Container with Perspective */
+		.card-container {
+			perspective: 1000px;
+			/* creates a 3D camera depth Without perspective, the flip would look flat and amateur.*/
+			/* animation: fadeIn 4s ease forwards; */
+		}
+
+		/* Card Styles */
+		.card {
+			width: 280px;
+			height: 380px;
+			position: relative;
+			transform-style: preserve-3d;
+			/* allows children to exist in 3D space */
+			transition: transform 0.8s ease;
+			/* smooth flip instead of instant jump */
+		}
+
+		/* flips the card on hover */
+		.card-container:hover .card {
+			transform: rotateY(-45deg);
+		}
+
+		/* Front & Back */
+		.card-face {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			border-radius: 20px;
+			backface-visibility: hidden;
+			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 20px;
+		}
+
+		.card-front {
+			background: #fff;
+		}
+
+		.card-back {
+			background: #333;
+			color: #fff;
+			transform: rotateY(180deg);
+		}
+
+		/* Avatar */
+		.avatar {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			object-fit: cover;
+			margin-bottom: 15px;
+			border: 4px solid #fbc2eb;
+		}
+
+		/* Button with Pulse */
+		.follow-btn {
+			margin-top: 15px;
+			padding: 10px 20px;
+			background: #ff6f61;
+			color: #fff;
+			border: none;
+			border-radius: 25px;
+			font-size: 16px;
+			cursor: pointer;
+			animation: pulse 1.5s ease-in-out infinite;
+			transition: background 0.3s;
+		}
+
+		.follow-btn:hover {
+			background: #e55b4d;
+		}
+
+		/* Animations */
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+				transform: translateY(30px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes pulse {
+			0% {
+				transform: scale(1);
+			}
+
+			50% {
+				transform: scale(1.1);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="card-container">
+		<div class="card">
+			<!-- Front Side -->
+			<div class="card-face card-front">
+				<img src="https://i.pravatar.cc/150?img=5" alt="Avatar" class="avatar">
+				<h2>Zoople</h2>
+				<p>Frontend Developer</p>
+				<button class="follow-btn">Follow</button>
+			</div>
+
+			<!-- Back Side -->
+			<div class="card-face card-back">
+				<h2>About Me</h2>
+				<p>I love building modern web apps using React, Node.js, and CSS animations!</p>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
