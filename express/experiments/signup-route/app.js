@@ -65,12 +65,7 @@ app.post("/login", (req, res) => {
 app.listen(4001, () => {
   console.log("Server running on port 4001")
 })
-```
 
----
 
-## How to test in Postman
 
-**Step 1 — Signup first**
-```
 // POST  http://localhost:4001/signup

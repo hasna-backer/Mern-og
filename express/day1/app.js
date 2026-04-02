@@ -1,17 +1,12 @@
 const express = require("express")
 const app = express()
 
-function middlewareA(req,res,next){
-console.log("method:",req.method);
-console.log("url:",req.url);
-next()
-}
 
 app.get("/",(req,res)=>{
   res.send("Home Page")
 })
 
-app.get("/about",middlewareA,(req,res)=>{
+app.get("/about",(req,res)=>{
   res.send("About Page")
 })
 

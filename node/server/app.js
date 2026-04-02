@@ -6,10 +6,15 @@ const server = http.createServer((req, res) => {
     res.end("Home Page");
   }
 
-  // About Route
-  else if (req.url === "/about" && req.method === "GET") {
+  else if (req.url === "/login" && req.method === "POST") {
     res.writeHead(200, { "Content-Type": "text/plain" });
     res.end("About Page");
+  }
+
+  // About Route
+  else if (req.url === "/update-profile" && req.method === "PUT") {
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("Update Page");
   }
 
   // Contact Route

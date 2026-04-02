@@ -1,24 +1,5 @@
 const math=require("./Math.js")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // const {add,subtract,multiply,divide}=math
 
 import {add,subtract} from "./Math.js"
